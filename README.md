@@ -15,7 +15,7 @@ StringCodeWriter writer;
 
 auto person = struct_({
 	field_("age", BuiltinType::Int),
-	field_("name", array_(BuiltinType::Char, 20))
+	field_("name", array_(20, BuiltinType::Char))
 }, "person");
 
 person->write(writer);
