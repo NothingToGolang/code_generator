@@ -1,4 +1,4 @@
-﻿#include "code_generator/Typedef.hpp"
+#include "code_generator/Typedef.hpp"
 
 const uint16_t Typedef::ID = IdGenerator::nextID();
 

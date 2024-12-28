@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file Type.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -17,7 +17,7 @@ class Type;
 typedef RefObject<Type> TypeRef;
 
 /**
- * @brief The Type class 类型基类
+ * @brief The Type class 类型基类，表示所有类型，仅仅作为基类，不可直接使用
  */
 class Type : public Code
 {

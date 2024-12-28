@@ -1,4 +1,4 @@
-﻿#include "code_generator/TypeDefinition.hpp"
+#include "code_generator/TypeDefinition.hpp"
 
 TypeDefinition::TypeDefinition(const String &name,
                                TypeRef declare)

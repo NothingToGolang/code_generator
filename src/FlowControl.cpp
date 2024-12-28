@@ -1,4 +1,4 @@
-﻿#include "code_generator/FlowControl.hpp"
+#include "code_generator/FlowControl.hpp"
 #include "code_generator/StringCodeWriter.hpp"
 
 const uint16_t FlowControl::ID = IdGenerator::nextID();

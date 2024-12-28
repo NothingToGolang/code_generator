@@ -1,4 +1,4 @@
-﻿#include "code_generator/Macro.hpp"
+#include "code_generator/Macro.hpp"
 #include "code_generator/StringCodeWriter.hpp"
 #include <fmt/format.h>
 
@@ -43,6 +43,10 @@ String Macro::content() const
 void Macro::setContent(const String &content)
 {
     m_content = content;
+}
+
+DefineRef Define::create(const String &name, const String &value) {
+    return createRefObject<Define>(name, value);
 }
 
 Define::Define()

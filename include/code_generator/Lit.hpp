@@ -12,6 +12,7 @@
 class Lit;
 typedef RefObject<Lit> LitRef;
 
+/// @brief The Lit class 文本类，用于表示一段文本，如"hello world"
 class Lit : public Code
 {
 public:
@@ -31,7 +32,12 @@ public:
   virtual uint16_t id() const override { return ID; }
 
 public:
+  /// @brief  value 获取文本内容
+  /// @return 
   const String &value() const;
+
+  /// @brief  setValue 设置文本内容
+  /// @param value 
   void setValue(const String &value);
 
 private:

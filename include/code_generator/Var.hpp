@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file Var.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -18,11 +18,13 @@ typedef RefObject<Var> VarRef;
 class VarDefinition;
 typedef RefObject<VarDefinition> VarDefinitionRef;
 
+/// @brief VarDefinition 变量定义，用于定义一个类型的变量，例如int a = 1;
+///                      VarDefinition::create("a", BuiltinType::Int, _("1"))
 class VarDefinition : public Code, public EnableSharedRefObject<VarDefinition> {
 public:
     enum AssignKind {
-        EQUAL,
-        CONSTRUCTOR
+        EQUAL,        /// 采用赋值方式
+        CONSTRUCTOR   /// 采用构造函数方式
     };
 
     typedef ::CodeContainer CodeRefList;
@@ -46,13 +48,32 @@ public:
   virtual Kind kind() const override;
 
 public:
+  /// @brief  获取给当前变量赋值的值
+  /// @return 
   CodeRef value() const;
+
+  /// @brief 当前变量类型
+  /// @return 
   TypeRef type() const;
+
+  /// @brief  当前遍历名称
+  /// @return 
   String name() const;
 
 public:
+  /// @brief  将code赋值给当前变量
+  /// @param code 
+  /// @return 新的变量类型，其中名称和类型与当前相同，仅类型不同
   VarDefinitionRef assign(const CodeRef &code);
+
+  /// @brief  将当前code作为构造函数参数进行调用，例如 a.construct(_("1")),则代表 类型 a(1);
+  /// @param code 构造函数内容
+  /// @return 
   VarDefinitionRef construct(const CodeRef &code);
+
+  /// @brief  将当前codes作为构造函数参数进行调用，例如 a.construct({_("1"), _("2")}),则生成 类型 a(1, 2);
+  /// @param codes 
+  /// @return 
   VarDefinitionRef construct(const CodeRefList &codes);
 
 protected:
@@ -65,6 +86,7 @@ private:
   AssignKind m_assignKind;
 };
 
+/// @class Var 变量，与VarDefinition不同，该类指代某一个变量，可用于调用函数，寻址，获取下标等
 class Var : public Code, public EnableSharedRefObject<Var>
 {
 public:
@@ -112,7 +134,7 @@ public:
   VarRef address();
 
   /**
-   * @brief call
+   * @brief call 调用函数
    * @param name
    * @param container
    * @return
@@ -138,7 +160,7 @@ private:
   String m_name;
 };
 
-inline VarRef var_(const String &name, TypeRef parent) {
+inline static VarRef var_(const String &name, TypeRef parent) {
   return Var::create(name, parent);
 }
 

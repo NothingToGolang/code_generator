@@ -1,4 +1,4 @@
-﻿#include "code_generator/Array.hpp"
+#include "code_generator/Array.hpp"
 
 const uint16_t Array::ID = IdGenerator::nextID();
 

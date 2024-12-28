@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file NamedType.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -14,13 +14,14 @@ class NamedType;
 typedef RefObject<NamedType> NamedTypeRef;
 
 /**
- * @brief The NamedType class 命名类型
+ * @brief The NamedType class 命名类型，实际和变量类似，但是不包含变量的值，只包含变量的类型，一般不使用，提供给typedef使用
  */
 class NamedType : public Type {
   public:
     static const uint16_t ID;
 
   public:
+    /// @brief  create 创建一个命名类型, create("name", BuildInType::INT), 生成一个int name
     static NamedTypeRef create(const String &name, TypeRef parent);
 
   public:
@@ -48,15 +49,12 @@ class NamedType : public Type {
     String m_name;
 };
 
-inline NamedTypeRef namedType_(const String &name, TypeRef parent) {
+/// @brief  创建一个命名类型, namedType_("name", BuildInType::INT), 生成一个int name，一般用于typedef使用，外部不需要直接调用
+/// @param name 
+/// @param parent 
+/// @return 
+inline static NamedTypeRef namedType_(const String &name, TypeRef parent) {
   return NamedType::create(name, parent);
-}
-
-typedef NamedType Field;
-typedef NamedTypeRef FieldRef;
-
-inline FieldRef field_(const String &name, TypeRef parent) {
-  return Field::create(name, parent);
 }
 
 #endif // NAMEDTYPE_HPP

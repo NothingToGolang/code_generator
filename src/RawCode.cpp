@@ -1,4 +1,4 @@
-﻿#include "code_generator/RawCode.hpp"
+#include "code_generator/RawCode.hpp"
 
 const uint16_t RawCode::ID = IdGenerator::nextID();
 RawCodeRef EMPTY_LINE = RawCode::create("");

@@ -12,6 +12,7 @@
 #include <vector>
 #include <set>
 
+/// @class File 文件类，用于表示一个文件，包含头文件，声明，定义，全局变量等，可将结果写入到CodeWriter中
 class File
 {
 public:

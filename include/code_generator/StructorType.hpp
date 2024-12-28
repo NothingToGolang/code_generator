@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file StructorType.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -11,6 +11,7 @@
 #include "TypeDefinition.hpp"
 #include <vector>
 
+/// @brief The StructorTypeDeclare class 类结构化类型声明基类，例如struct, union等
 class StructorTypeDeclare : public Type {
   public:
     static const uint16_t ID;

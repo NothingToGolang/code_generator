@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file StringCodeWriter.hpp
  * @author huangjian
  * @date 2022-02-21

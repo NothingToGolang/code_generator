@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 3.5)
 project(code_generator)
 
 set(HEADERS_DIR "${PROJECT_SOURCE_DIR}/include")
+set(CMAKE_CXX_STANDARD 14)
 
 set(CODE_GENERATOR_SHARED_LIBRARY ${BUILD_SHARED_LIBS})
 configure_file(${HEADERS_DIR}/code_generator/Config.h.in ${HEADERS_DIR}/code_generator/Config.h)
@@ -13,8 +14,6 @@ IF (MSVC)
 	add_compile_options("/utf-8")
 ENDIF()
 
-include_directories(${HEADERS_DIR})
-include_directories(${PROJECT_SOURCE_DIR}/libs/fmt/include)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src SOURCE_FILES)
 
 IF (BUILD_SHARED_LIBS)
@@ -26,6 +25,9 @@ IF (BUILD_SHARED_LIBS)
 ELSE()
 	add_library(${PROJECT_NAME} ${SOURCE_FILES})
 ENDIF()  
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${HEADERS_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/libs/fmt/include)
   
 install(TARGETS ${PROJECT_NAME} 
 		RUNTIME DESTINATION bin

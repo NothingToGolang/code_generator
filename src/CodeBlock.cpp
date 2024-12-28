@@ -1,4 +1,4 @@
-﻿#include "code_generator/CodeBlock.hpp"
+#include "code_generator/CodeBlock.hpp"
 #include "code_generator/StringCodeWriter.hpp"
 
 CodeBlock::CodeBlock()

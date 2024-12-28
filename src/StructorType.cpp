@@ -1,4 +1,4 @@
-﻿#include "code_generator/StructorType.hpp"
+#include "code_generator/StructorType.hpp"
 
 const uint16_t StructorType::ID = IdGenerator::nextID();
 const uint16_t StructorTypeDeclare::ID = IdGenerator::nextID();

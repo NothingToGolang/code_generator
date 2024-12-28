@@ -1,4 +1,4 @@
-﻿#include "code_generator/FunctionDeclare.hpp"
+#include "code_generator/FunctionDeclare.hpp"
 
 const uint16_t FunctionType::ID = IdGenerator::nextID();
 

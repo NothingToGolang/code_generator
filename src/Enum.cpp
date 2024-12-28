@@ -1,4 +1,4 @@
-﻿#include "code_generator/Enum.hpp"
+#include "code_generator/Enum.hpp"
 
 const uint16_t Enum::ID = IdGenerator::nextID();
 const uint16_t EnumDeclare::ID = IdGenerator::nextID();
@@ -67,6 +67,11 @@ EnumDeclareRef Enum::declare() const
 EnumDeclareRef EnumDeclare::create(const String &name)
 {
   return createRefObject<EnumDeclare>(name);
+}
+
+EnumDeclare::EnumDeclare()
+{
+
 }
 
 EnumDeclare::EnumDeclare(const String &name)

@@ -10,6 +10,7 @@
 
 #include "Evaluate.hpp"
 
+/// @brief  return_ 创建一个返回语句
 #define return_(code) Evaluate::create("return {};", code)
 
 #endif // RETURNS_HPP

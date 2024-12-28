@@ -1,4 +1,4 @@
-﻿#include "code_generator/StringCodeWriter.hpp"
+#include "code_generator/StringCodeWriter.hpp"
 
 const String StringCodeWriter::INDENTATION = "  ";
 const String StringCodeWriter::SPACER = " ";
@@ -9,6 +9,7 @@ StringCodeWriter::StringCodeWriter()
   : m_indent(0)
   , m_nextCharIsSpecial(false)
   , m_isNewLine(false)
+  , m_str("")
 {
 
 }

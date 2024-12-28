@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file TypeModifier.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -18,7 +18,7 @@ typedef RefObject<ConstType> ConstTypeRef;
 typedef RefObject<StaticType> StaticTypeRef;
 
 /**
- * @brief The TypeModifier class 类型修饰符
+ * @brief The TypeModifier class 类型修饰符，用于表示类型的修饰符，如const, static等
  */
 class TypeModifier : public Type {
   public:
@@ -42,7 +42,7 @@ class TypeModifier : public Type {
 };
 
 /**
- * @brief The ConstType class 常量类型修饰符
+ * @brief The ConstType class 常量类型修饰符，用于表示const类型修饰符，可通过const_(父类型进行添加)
  */
 class ConstType : public TypeModifier {
   public:
@@ -61,7 +61,7 @@ class ConstType : public TypeModifier {
 };
 
 /**
- * @brief The StaticType class 静态类型修饰符
+ * @brief The StaticType class 静态类型修饰符，用于表示static类型修饰符，可通过static_(父类型进行添加)
  */
 class StaticType : public TypeModifier {
   public:
@@ -79,11 +79,17 @@ class StaticType : public TypeModifier {
     }
 };
 
-inline ConstTypeRef const_(TypeRef parent = nullptr) {
+/// @brief 创建一个const修饰类型，修饰传入的父类型
+/// @param parent 
+/// @return 返回一个const修饰后的类型
+inline static ConstTypeRef const_(TypeRef parent = nullptr) {
   return ConstType::create(parent);
 }
 
-inline StaticTypeRef static_(TypeRef parent = nullptr) {
+/// @brief 创建一个static修饰的类型，修饰传入的父类型
+/// @param parent 
+/// @return 返回一个static修饰后的类型
+inline static StaticTypeRef static_(TypeRef parent = nullptr) {
   return StaticType::create(parent);
 }
 

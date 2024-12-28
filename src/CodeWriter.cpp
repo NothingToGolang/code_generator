@@ -1,4 +1,4 @@
-﻿#include "code_generator/CodeWriter.hpp"
+#include "code_generator/CodeWriter.hpp"
 
 CodeWriter::CodeWriter()
 {

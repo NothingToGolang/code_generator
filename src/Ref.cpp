@@ -1,7 +1,9 @@
-﻿#include "code_generator/Ref.hpp"
+#include "code_generator/Ref.hpp"
 #include "code_generator/Array.hpp"
 #include "code_generator/Function.hpp"
 #include "code_generator/Ptr.hpp"
+
+#include <stdexcept>
 
 const uint16_t Ref::ID = IdGenerator::nextID();
 

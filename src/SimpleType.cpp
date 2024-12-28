@@ -1,4 +1,4 @@
-﻿#include "code_generator/SimpleType.hpp"
+#include "code_generator/SimpleType.hpp"
 
 SimpleTypeRef BuiltinType::Void = simpleType_("void");
 SimpleTypeRef BuiltinType::Int = simpleType_("int");

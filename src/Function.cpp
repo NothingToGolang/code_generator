@@ -1,4 +1,4 @@
-﻿#include "code_generator/Function.hpp"
+#include "code_generator/Function.hpp"
 #include "code_generator/StringCodeWriter.hpp"
 #include "code_generator/RawCode.hpp"
 #include "code_generator/Ptr.hpp"

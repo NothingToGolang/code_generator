@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file SimpleType.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -13,6 +13,9 @@
 class SimpleType;
 typedef RefObject<SimpleType> SimpleTypeRef;
 
+/// @brief  The SimpleType class 简单类型类，用于表示一个简单类型，如int, char, float，或者自定义类型等，
+///                      内置类型可通过BuiltinType获取，如BuiltinType::Int, BuiltinType::Float等，
+///                      其他类型可通过simpleType_获取，如simpleType_("MyType")
 class SimpleType : public Type {
   public:
     static const uint16_t ID;
@@ -34,14 +37,23 @@ class SimpleType : public Type {
     String m_type;
 };
 
-inline SimpleTypeRef simpleType_(const String &codeType, TypeRef parent = nullptr) {
+/// @brief  创建一个简单类型，使用方式为simpleType_("MyType")，生成一个MyType的类型
+/// @param codeType 类型名称
+/// @param parent   父类，一般不需要使用，若不为空，则会生成 " 父类 当前类 " 的类型，例如父类是一个某类型指针，然后在其基础上添加其他的引用等
+/// @return 
+inline static SimpleTypeRef simpleType_(const String &codeType, TypeRef parent = nullptr) {
   return SimpleType::create(codeType, parent);
 }
 
-inline SimpleTypeRef type_(const String &codeType, TypeRef parent = nullptr) {
+/// @brief  创建一个简单类型，使用方式为type_("MyType")，生成一个MyType的类型
+/// @param codeType  类型名称
+/// @param parent    父类，一般不需要使用，若不为空，则会生成 " 父类 当前类 " 的类型，例如父类是一个某类型指针，然后在其基础上添加其他的引用等
+/// @return 
+inline static SimpleTypeRef type_(const String &codeType, TypeRef parent = nullptr) {
   return SimpleType::create(codeType, parent);
 }
 
+/// @brief  内置类型类，用于表示一些内置类型，如int, char, float等
 class CODEC_GENERATOR_API BuiltinType {
   public:
     static SimpleTypeRef Int;

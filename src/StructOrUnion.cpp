@@ -1,4 +1,4 @@
-﻿#include "code_generator/StructOrUnion.hpp"
+#include "code_generator/StructOrUnion.hpp"
 #include "code_generator/RawCode.hpp"
 
 const uint16_t Struct::ID = IdGenerator::nextID();

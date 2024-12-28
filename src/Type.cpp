@@ -1,4 +1,4 @@
-﻿#include "code_generator/Type.hpp"
+#include "code_generator/Type.hpp"
 #include "code_generator/StringCodeWriter.hpp"
 
 Type::Type(TypeRef parent) : m_parent(parent) {}

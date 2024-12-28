@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @file RawCode.hpp
  * @author huangjian
  * @date 2022-02-21
@@ -13,12 +13,18 @@
 class RawCode;
 typedef RefObject<RawCode> RawCodeRef;
 
+/// @brief  The RawCode class 原始代码类，用于表示一段原始代码，如"int a = 0;"
 class RawCode : public Code
 {
   public:
     static const uint16_t ID;
 
   public:
+    /// @brief  create 创建一个原始代码对象，全部为用户自定义
+    /// @param custom   用户自定义代码
+    /// @param typ      代码类型
+    /// @param kind     代码种类
+    /// @return 
     static RawCodeRef create(const String &custom, CodeType typ = CodeType_Normal, Kind kind = CodeStatment);
 
   public:
@@ -37,7 +43,10 @@ class RawCode : public Code
     CodeType m_type;
 };
 
-inline RawCodeRef _(const String &custom) {
+/// @brief  _ 创建一个原始代码对象
+/// @param custom 
+/// @return 
+inline static RawCodeRef _(const String &custom) {
     return RawCode::create(custom);
 }
 

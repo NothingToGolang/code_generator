@@ -11,7 +11,7 @@ FieldRef Field::create(const String &name, TypeRef parent)
   return createRefObject<Field>(name, parent);
 }
 
-VarRef Field::visit(VarRef self) 
+VarRef Field::visit(VarRef self)
 {
   StringCodeWriter writer;
   writer.writeString(self->name());

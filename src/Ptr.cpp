@@ -1,4 +1,4 @@
-﻿#include "code_generator/Ptr.hpp"
+#include "code_generator/Ptr.hpp"
 #include "code_generator/Array.hpp"
 #include "code_generator/FunctionDeclare.hpp"
 #include "code_generator/Ref.hpp"

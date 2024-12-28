@@ -1,4 +1,4 @@
-﻿#include "code_generator/TypeModifier.hpp"
+#include "code_generator/TypeModifier.hpp"
 
 const uint16_t TypeModifier::ID = IdGenerator::nextID();
 const uint16_t StaticType::ID = IdGenerator::nextID();
